@@ -32,7 +32,10 @@ public class FirstFragment extends Fragment {
         Button btn2 = binding.to3FragBtn;
 
         btn1.setOnClickListener(v -> {
-            Navigation.findNavController(v).navigate(R.id.action_firstFragment_to_secondFragment);
+            Bundle bundle = new Bundle();
+            bundle.putString("Name", binding.dataText.getText().toString());
+            Navigation.findNavController(v).navigate(R.id.action_firstFragment_to_secondFragment,
+                    bundle);
         });
 
         btn2.setOnClickListener(v -> {
